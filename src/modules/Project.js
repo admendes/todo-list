@@ -16,7 +16,18 @@ export class Project {
         return this.taskList;
     }
 
-    setDate(taskList) {
+    setTaskList(taskList) {
         this.taskList = taskList;
     }
+
+    addTask(task) {
+        this.taskList.push(task);
+    }
+
+    /*
+    getTask(task) {
+        return this.taskList
+    }
+    */
+    
 }
