@@ -1,3 +1,3 @@
-import loadWebsite from "./modules/website.js";
+import loadWebsite from "./modules/Website.js";
 
 loadWebsite();
