@@ -40,6 +40,8 @@ body {
 #main {
     display: flex;
     background-color:rgba(0, 0, 0, 0.747);
+    margin-left: 200px;
+
 }
 
 
@@ -57,7 +59,7 @@ body {
 #nav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 14px;
     color: #818181;
     display: block;
 }

@@ -19,4 +19,9 @@ export class Todolist {
         this.projectList = projectList;
     }
 
+
+    getProject(projectName) {
+        return this.projectList.find((projectList) => projectList.getName() === projectName);
+    }
+
 }

@@ -27,11 +27,15 @@ function createFooter() {
     return footer;
 }
 
-function createMain() {
+function createMain(name) {
     const main = document.createElement("main");
+    main.textContent = "";
     main.setAttribute("id", "main");
 
-    todos.getProjectList().forEach(element => {
+
+    const proj = todos.getProject(name);
+
+    proj.getTaskList().forEach(element => {
         addTask(element.getName(), main);
     });;
 
@@ -85,7 +89,7 @@ function loadWebsite() {
     content.appendChild(createHeader());
     content.appendChild(createFooter());
     content.appendChild(createNav());
-    content.appendChild(createMain());
+    content.appendChild(createMain("Default Project"));
 
     //loadHome();
 }
