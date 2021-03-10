@@ -28,10 +28,10 @@ function createFooter() {
 }
 
 function createMain(name) {
+
     const main = document.createElement("main");
     main.textContent = "";
     main.setAttribute("id", "main");
-
 
     const proj = todos.getProject(name);
 
@@ -39,22 +39,57 @@ function createMain(name) {
         addTask(element.getName(), main);
     });;
 
-    const homeButton = document.createElement("button");
-    homeButton.setAttribute("id", "button-home");
-    homeButton.classList.add("nav-button");
-    homeButton.textContent = "Home";
+    //const homeButton = document.createElement("button");
+    //homeButton.setAttribute("id", "button-home");
+    //homeButton.classList.add("nav-button");
+    //homeButton.textContent = "Home";
 
-    main.appendChild(homeButton);
+    //main.appendChild(homeButton);
+
+
+
+
+
+    //lixo
+    const testbut = document.createElement("button");
+    testbut.classList.add("test-button");
+    testbut.textContent = "test";
+    testbut.addEventListener('click', function() {
+
+        testshit(main);
+    });
+
+    main.appendChild(testbut);
+    //lixo
+
+
+
+
 
     return main;
 }
 
+//lixo
+function testshit(main) {
+    main.textContent = ""
+    const testbut = document.createElement("button");
+    testbut.classList.add("test-button");
+    testbut.textContent = "test";
+    testbut.addEventListener('click', function() {
+
+        testshit(main);
+    });
+
+    main.appendChild(testbut); 
+}
+
 function addTask(name, main) {
-    const addTask = document.createElement("a");
-    addTask.classList.add("nav-link");
-    addTask.textContent = name;
-    addTask.setAttribute("href", "www.google.com");
-    main.appendChild(addTask);
+    const task = document.createElement("button");
+    task.classList.add("nav-link");
+    task.textContent = name;
+    task.setAttribute("background-color", "red");
+    main.appendChild(task);
+    console.log(main)
 }
 
 function createNav() {
@@ -71,17 +106,35 @@ function createNav() {
         addProject(element.getName(), nav);
     });;
 
+
+    //create new proj
+    const newProject = document.createElement("a");
+    newProject.classList.add("nav-link");
+    newProject.textContent = "New Project";
+    newProject.setAttribute("href", abc());
+    nav.appendChild(newProject);
+
     return nav;
 }
 
 function addProject(name, nav) {
-    const addProject = document.createElement("a");
-    addProject.classList.add("nav-link");
+    const addProject = document.createElement("button");
+    addProject.classList.add("nav-button");
     addProject.textContent = name;
-    addProject.setAttribute("href", "www.google.com");
+    addProject.addEventListener('click', function() {
+        console.log("qaa")
+        var myobj = document.getElementById("main");
+        myobj.remove(); 
+        const content = document.getElementById("content");
+        content.appendChild(createMain(name));
+    });
+
     nav.appendChild(addProject);
 }
 
+function abc() {
+    console.log("aaaa")
+}
 
 function loadWebsite() {
     const content = document.getElementById("content");
